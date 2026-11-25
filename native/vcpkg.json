@@ -1,0 +1,30 @@
+{
+  "name": "cts4p-native",
+  "version-string": "0.5.0",
+  "description": "cts4p native core: winmm proxy, DX11 overlay, WebRTC P2P",
+  "dependencies": [
+    "minhook",
+    {
+      "name": "imgui",
+      "features": [
+        "dx11-binding",
+        "win32-binding"
+      ]
+    },
+    {
+      "name": "libdatachannel",
+      "default-features": false,
+      "features": [
+        "ws"
+      ]
+    },
+    "nlohmann-json",
+    "zstd"
+  ],
+  "builtin-baseline": "93ad765c7b66ab9ce97469ec23a90b15c3a14ee5",
+  "vcpkg-configuration": {
+    "overlay-ports": [
+      "./ports"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+diff --git a/src/impl/websocket.cpp b/src/impl/websocket.cpp
+index 93dfe49..9549f33 100644
+--- a/src/impl/websocket.cpp
++++ b/src/impl/websocket.cpp
+@@ -372,7 +372,9 @@ shared_ptr<TlsTransport> WebSocket::initTlsTransport() {
+ 		bool verify = mHostname.has_value() && !config.disableTlsVerification;
+ 
+ #ifdef _WIN32
+-		if (std::exchange(verify, false)) {
++		// cts4p: OpenSSL can verify on Windows when the caller supplies a CA bundle
++		// (cts4p exports the Windows ROOT store to PEM). Only skip verification without one.
++		if (!config.caCertificatePemFile && std::exchange(verify, false)) {
+ 			PLOG_WARNING << "TLS certificate verification with root CA is not supported on Windows";
+ 		}
+ #endif

@@ -1,0 +1,12 @@
+{
+  "signaling_url": "wss://cts4p-signal.SEU-SUBDOMINIO.workers.dev/ws",
+  "ice_servers": [
+    "stun:stun.l.google.com:19302",
+    "stun:stun1.l.google.com:19302"
+  ],
+  "nickname": "",
+  "overlay_key": 45,
+  "max_peers": 7,
+  "log_level": "info",
+  "show_welcome_toast": true
+}

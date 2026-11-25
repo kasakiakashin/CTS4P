@@ -1,0 +1,47 @@
+﻿CTS4P - multiplayer co-op para The Sims 4
+==========================================
+
+INSTALAR
+  1. Feche o The Sims 4.
+  2. Dê dois cliques em instalar.bat e escolha 1 (Instalar ou atualizar).
+     - O instalador acha o jogo sozinho (Steam ou EA app).
+     - Faz backup de tudo que substituir em Documentos\Electronic Arts\The Sims 4\cts4p_backup\
+     - Liga os "mods de script" no jogo, se estiverem desligados (com backup do Options.ini).
+     - Na primeira vez, pede o endereço do servidor de sinalização (veja abaixo).
+  3. Abra o jogo e aperte INSERT para abrir o painel do cts4p.
+
+DESINSTALAR
+  Dois cliques em instalar.bat e escolha 2. Remove só os arquivos do CTS4P e
+  devolve o que tiver sido substituído (por exemplo, a winmm.dll de outro mod).
+
+JOGAR COM OUTRA PESSOA
+  - Os dois precisam da MESMA versão do CTS4P e, de preferência, do mesmo jogo,
+    pacotes e mods (o painel avisa o que for diferente).
+  - Servidor de sinalização: só serve para os dois PCs se encontrarem.
+      * Pela internet: publique signaling\cloudflare\worker.js (grátis, ver
+        signaling\cloudflare\README.md) e use o endereço wss://.../ws nos dois PCs.
+      * Na mesma rede: rode "python signaling\python\server.py" num dos PCs e use
+        ws://<IP desse PC>:8787/ws nos dois.
+    O endereço fica em Documentos\Electronic Arts\The Sims 4\Mods\cts4p\config.json
+  - Quem hospeda: entre no lote, INSERT > Sala > Criar sala, passe o código CTS-XXXX.
+  - Quem entra: INSERT > Sala > digite o código > Entrar na sala (pode ser no menu
+    ou já jogando). O save do host chega sozinho; depois vá em
+    Carregar Jogo > "CTS4P - <nome do host>".
+  - "Sincronizar automaticamente" (aba Sala, ligado): toda vez que o host salva,
+    os convidados recebem a cópia nova sem parar de jogar.
+
+CRIAR JUNTOS (cada um cria o seu Sim)
+  1. Conectem-se na sala (pode ser no menu principal).
+  2. Cada um cria o seu Sim no Criar um Sim, ao mesmo tempo, e salva a família
+     na Biblioteca.
+  3. INSERT > Sala > Criar juntos: escolha a família e clique em Enviar.
+     Ela aparece na Biblioteca dos outros jogadores.
+  4. O host coloca as famílias e junta todos numa família só (se a família
+     recebida não aparecer na Biblioteca na hora, reinicie o jogo).
+
+TESTE RÁPIDO (sozinho)
+  INSERT > Sala > Avançado > "Testar conexão neste PC": deve dizer "tudo certo".
+
+PROBLEMAS
+  Logs: Documentos\Electronic Arts\The Sims 4\Mods\cts4p\cts4p_native.log
+  A aba Ajustes do painel mostra versões, o que está funcionando e os mods encontrados.
